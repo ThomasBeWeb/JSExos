@@ -13,10 +13,10 @@ function exercice4(){
             
             newMot = "";
             
-            if((i === 0) || (message[i] =! " ")){
+            if((i === 0) || (message[i] !== " ")){
                   
                   messageArr.push(i);
-                  while(message[i] != " " || i < lenght(message)) {
+                  while((message[i] !== " ") && (i < lenght(message))) {
                         newMot += message[i];
                         i++;
                   }
@@ -28,6 +28,15 @@ function exercice4(){
             }
       }
       
+      
+      var messageToScreen = "La phrase " + message + " contient " + compteur + " mots \n";
+     
+      
+      for(i = 0 ; i < messageArr.length ; i = i + 3){
+          
+          messageToScreen += "Le mot " + messageArr[(i+1)] + " commence en " + (messageArr[i] + 1) + " et contient " + messageArr[(i + 2)] + " lettres \n";
+      }
+      
       //Affichage du résultat
-      afficheResultat("exo03",newMessageToString);
+      afficheResultat("exo04",messageToScreen);
 }

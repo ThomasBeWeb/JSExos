@@ -18,10 +18,11 @@ function exercice3(){
                   newMessage[i] = "-";
                   
             }else if(i === 0){
-                  newMessage[i] = message[i].toUpperCase();
+                 
+                  newMessage[i] = toUpperCase(message[i]);
                   
             }else if(i != 0 && newMessage[i-1] === "-"){
-                  newMessage[i] = message[i].toUpperCase();
+                  newMessage[i] = toUpperCase(message[i]);
                   
             }else{
                   newMessage[i] = message[i];
