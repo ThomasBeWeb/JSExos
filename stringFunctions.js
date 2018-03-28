@@ -25,6 +25,90 @@ function lenght(chaine) {
     return longueur;
 }
 
+function getIndex(message,caractere) {
+    
+    for(i = 0 ; i < lenght(message) ; i++) {
+        if(message[i] === caractere){
+            return i;
+        }
+    }
+}
+
+function count(message,caractere) {
+    
+    var compteur = 0;
+    
+    for(i = 0 ; i < lenght(message) ; i++) {
+        if(message[i] === caractere){
+            compteur++;
+        }
+    }
+    
+    return compteur;
+}
+
+function replace(message,from,to) {
+    
+    chaineReturn = "";
+    
+    for(i = 0 ; i < lenght(message) ; i++) {
+        if(message[i] === from){
+           chaineReturn += to;
+        }else{
+            chaineReturn += message[i];
+        }
+    }
+    
+    return chaineReturn;
+}
+
+function compteMots(message) {
+    
+     var compteur = 0;
+    
+    for(i = 0 ; i < lenght(message) ; i++){
+
+            if(message[i] === " "){
+                  compteur++; 
+            }
+      }
+      
+      return (compteur+1);
+}
+
+function getWords(message) {
+    
+    var listeMots = [];
+    var listeIdx = [];
+        
+     for(i = 0 ; i < lenght(message) ; i++){
+            
+            newMot = "";
+            
+            if((i === 0) || (message[i] !== " ")){
+                  
+                  listeIdx.push(i);
+                  while((message[i] !== " ") && (i < lenght(message))) {
+                        newMot += message[i];
+                        i++;
+                  }
+                  
+                  listeMots.push(newMot);  
+            }
+      }
+      
+      var tableauFinal = [];
+      
+      for(i = 0 ; i < listeIdx.length ; i++){
+          
+          var tableauAAjouter = [listeIdx(i),listeMots(i)];
+          
+          tableauFinal.push(tableauAAjouter);
+      }
+      
+      return tableauFinal;
+}
+
 function toUpperCase(char) {
   var tableau =
           [
@@ -65,4 +149,23 @@ function toUpperCase(char) {
           }
       }
   }
+}
+
+function voyelleOrNot(mot){
+    
+    var tableau = ["a", "e", "i", "o", "u"," y"];
+    
+    var compteur = 0;
+    
+    for(var i = 0 ; i < lenght(mot) ; i++){
+        
+        for(var j = 0 ; j < tableau.length ; j++){
+            
+            if(mot[i] === tableau[j]){
+                compteur++;
+            }
+        }
+    }
+    
+    return compteur;
 }
