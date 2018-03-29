@@ -12,6 +12,7 @@ function afficheResultat(id,texte){
     
 }
 
+//Longueur d'une chaine
 function lenght(chaine) {
     var longueur = 0;
 
@@ -25,6 +26,7 @@ function lenght(chaine) {
     return longueur;
 }
 
+//Index de la première occurence d'un caractère dans un message
 function getIndex(message,caractere) {
     
     for(i = 0 ; i < lenght(message) ; i++) {
@@ -34,6 +36,7 @@ function getIndex(message,caractere) {
     }
 }
 
+//Nombre d'occurence d'un caractère dans un message
 function count(message,caractere) {
     
     var compteur = 0;
@@ -47,6 +50,7 @@ function count(message,caractere) {
     return compteur;
 }
 
+//Remplace le caractère from par le caractère to dans la chaine message
 function replace(message,from,to) {
     
     chaineReturn = "";
@@ -62,6 +66,7 @@ function replace(message,from,to) {
     return chaineReturn;
 }
 
+//Compte le nb de mots dans un message
 function compteMots(message) {
     
      var compteur = 0;
@@ -76,6 +81,7 @@ function compteMots(message) {
       return (compteur+1);
 }
 
+//Retourne un tableau 2D: [[index mot,mot]]
 function getWords(message) {
     
     var listeMots = [];
@@ -101,7 +107,7 @@ function getWords(message) {
       
       for(i = 0 ; i < listeIdx.length ; i++){
           
-          var tableauAAjouter = [listeIdx(i),listeMots(i)];
+          var tableauAAjouter = [listeIdx[i],listeMots[i]];
           
           tableauFinal.push(tableauAAjouter);
       }
